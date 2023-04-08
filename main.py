@@ -6,7 +6,7 @@ import pymongo
 import CONFIG
 app = FastAPI(title="NeuralFlow API",
               version="0.0.1",
-              terms_of_service="http://www.neuralflow.com",
+              terms_of_service="https://www.neuralflow.com",
               contact={
                   "name": "Jonyan Dunh",
                   "email": "jonyandunh@outlook.com",

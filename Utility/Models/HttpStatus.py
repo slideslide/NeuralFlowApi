@@ -72,17 +72,19 @@ class HttpStatus:
         HTTP_200_OK: 'Request was successful.',
         HTTP_201_CREATED: 'Request was successful, and a new resource has been created.',
         HTTP_202_ACCEPTED: 'Request has been accepted but not yet acted upon.',
-        HTTP_203_NON_AUTHORITATIVE_INFORMATION: 'Request was successful, but server is returning information that may be from another source.',
+        HTTP_203_NON_AUTHORITATIVE_INFORMATION: 'Request was successful, but server is returning information that may '
+                                                'be from another source.',
         HTTP_204_NO_CONTENT: 'There is no content to send for this request, but the headers may be useful.',
         HTTP_205_RESET_CONTENT: 'Server successfully processed the request, but is not returning any content.',
         HTTP_206_PARTIAL_CONTENT: 'Download is separated into multiple streams, due to range header.',
-        HTTP_207_MULTI_STATUS: 'Message body that follows is an XML message and can contain a number of separate response codes.',
+        HTTP_207_MULTI_STATUS: 'Message body that follows is an XML message and can contain a number of separate '
+                               'response codes.',
         HTTP_208_ALREADY_REPORTED: (
-                'Response is a representation of the result of one or more instance-manipulations applied to the current ' +
-                'instance.'),
+                'Response is a representation of the result of one or more instance-manipulations applied to the '
+                'current instance.'),
         HTTP_226_IM_USED: (
-                    'The server has fulfilled a GET request for the resource, and the response is a representation of the ' +
-                    'result of one or more instance-manipulations applied to the current instance.'),
+                'The server has fulfilled a GET request for the resource, and the response is a representation of the ' +
+                'result of one or more instance-manipulations applied to the current instance.'),
 
         # Redirection.
         HTTP_300_MULTIPLE_CHOICES: 'Request has more than one possible response.',
@@ -92,7 +94,8 @@ class HttpStatus:
         HTTP_304_NOT_MODIFIED: 'Response has not been modified, client can continue to use a cached version.',
         HTTP_305_USE_PROXY: 'Requested resource may only be accessed through a given proxy.',
         HTTP_306_RESERVED: 'No longer used. Requested resource may only be accessed through a given proxy.',
-        HTTP_307_TEMPORARY_REDIRECT: 'URI of this resource has changed, temporarily. Use the same HTTP method to access it.',
+        HTTP_307_TEMPORARY_REDIRECT: 'URI of this resource has changed, temporarily. Use the same HTTP method to '
+                                     'access it.',
         HTTP_308_PERMANENT_REDIRECT: 'The request, and all future requests should be repeated using another URI.',
 
         # Client Error.
@@ -102,17 +105,21 @@ class HttpStatus:
         HTTP_403_FORBIDDEN: 'Client does not have rights to access the content.',
         HTTP_404_NOT_FOUND: 'Server cannot find requested resource.',
         HTTP_405_METHOD_NOT_ALLOWED: 'Server has disabled this request method and cannot be used.',
-        HTTP_406_NOT_ACCEPTABLE: 'Requested resource is only capable of generating content not acceptable according to the Accept headers sent.',
+        HTTP_406_NOT_ACCEPTABLE: 'Requested resource is only capable of generating content not acceptable according '
+                                 'to the Accept headers sent.',
         HTTP_407_PROXY_AUTHENTICATION_REQUIRED: 'Authentication by a proxy is needed to access the given resource.',
         HTTP_408_REQUEST_TIMEOUT: 'Server would like to shut down this unused connection.',
-        HTTP_409_CONFLICT: 'Request could not be processed because of conflict in the request, such as an edit conflict.',
+        HTTP_409_CONFLICT: 'Request could not be processed because of conflict in the request, such as an edit '
+                           'conflict.',
         HTTP_410_GONE: 'Requested content has been delected from the server',
         HTTP_411_LENGTH_REQUIRED: 'Server requires the Content-Length header to be defined.',
-        HTTP_412_PRECONDITION_FAILED: 'Client has indicated preconditions in its headers which the server does not meet.',
+        HTTP_412_PRECONDITION_FAILED: 'Client has indicated preconditions in its headers which the server does not '
+                                      'meet.',
         HTTP_413_REQUEST_ENTITY_TOO_LARGE: 'Request entity is larger than limits defined by server.',
         HTTP_414_REQUEST_URI_TOO_LONG: 'URI requested by the client is too long for the server to handle.',
         HTTP_415_UNSUPPORTED_MEDIA_TYPE: 'Media format of the requested data is not supported by the server.',
-        HTTP_416_REQUESTED_RANGE_NOT_SATISFIABLE: "Range specified by the Range header in the request can't be fulfilled.",
+        HTTP_416_REQUESTED_RANGE_NOT_SATISFIABLE: "Range specified by the Range header in the request can't be "
+                                                  "fulfilled.",
         HTTP_417_EXPECTATION_FAILED: "Expectation indicated by the Expect header can't be met by the server.",
         HTTP_418_IM_A_TEAPOT: 'HTCPCP server is a teapot; the resulting entity body may be short and stout.',
         HTTP_422_UNPROCESSABLE_ENTITY: 'Request was well-formed but was unable to be followed due to semantic errors.',
@@ -121,19 +128,22 @@ class HttpStatus:
         HTTP_426_UPGRADE_REQUIRED: 'Client should switch to a different protocol such as TLS/1.0.',
         HTTP_428_PRECONDITION_REQUIRED: 'Origin server requires the request to be conditional.',
         HTTP_429_TOO_MANY_REQUESTS: 'User has sent too many requests in a given amount of time.',
-        HTTP_431_REQUEST_HEADER_FIELDS_TOO_LARGE: 'Server rejected the request because either a header, or all the headers collectively, are too large.',
+        HTTP_431_REQUEST_HEADER_FIELDS_TOO_LARGE: 'Server rejected the request because either a header, or all the '
+                                                  'headers collectively, are too large.',
         HTTP_451_UNAVAILABLE_FOR_LEGAL_REASONS: (
-                    'You attempted to access a Legally-restricted Resource. This could be due to censorship or ' +
-                    'government-mandated blocked access.'),
+                'You attempted to access a Legally-restricted Resource. This could be due to censorship or ' +
+                'government-mandated blocked access.'),
 
         # Server Error.
         HTTP_500_INTERNAL_SERVER_ERROR: "Server has encountered a situation it doesn't know how to handle.",
         HTTP_501_NOT_IMPLEMENTED: 'Request method is not supported by the server and cannot be handled.',
-        HTTP_502_BAD_GATEWAY: 'Server, while working as a gateway to get a response needed to handle the request, got an invalid response.',
+        HTTP_502_BAD_GATEWAY: 'Server, while working as a gateway to get a response needed to handle the request, '
+                              'got an invalid response.',
         HTTP_503_SERVICE_UNAVAILABLE: 'Server is not yet ready to handle the request.',
         HTTP_504_GATEWAY_TIMEOUT: 'Server is acting as a gateway and cannot get a response in time.',
         HTTP_505_HTTP_VERSION_NOT_SUPPORTED: 'HTTP version used in the request is not supported by the server.',
-        HTTP_506_VARIANT_ALSO_NEGOTIATES: 'Transparent content negotiation for the request results in acircular reference.',
+        HTTP_506_VARIANT_ALSO_NEGOTIATES: 'Transparent content negotiation for the request results in acircular '
+                                          'reference.',
         HTTP_507_INSUFFICIENT_STORAGE: 'Server is unable to store the representation needed to complete the request.',
         HTTP_508_LOOP_DETECTED: 'The server detected an infinite loop while processing the request',
         HTTP_510_NOT_EXTENDED: 'Further extensions to the request are required for the server to fulfill it.',
@@ -143,4 +153,3 @@ class HttpStatus:
     @classmethod
     def get_message(cls, status_code):
         return cls._status_descriptions.get(status_code, "Unknown status code.")
-
