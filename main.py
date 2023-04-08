@@ -1,12 +1,12 @@
-import json
-#import
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from requests import get
-app = FastAPI()
+
+from Http.Routes import router
+from Utility.Models.Response import ResponseModel
+
+app = FastAPI(default_response_class=ResponseModel)
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
+    "*",
 ]
 
 app.add_middleware(
@@ -17,6 +17,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def root():
-    return json.loads(get("https://dxs.moe.gov.cn/zx/json/xl/xlwk/").content.decode('utf-8', 'ignore'))[0]
+app.include_router(router)
