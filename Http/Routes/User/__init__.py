@@ -7,5 +7,5 @@ router = APIRouter()
 router.include_router(Login.router, prefix="/login")
 router.include_router(Register.router, prefix="/register")
 @router.get("/")
-async def root():
+async def index():
     return "User"
