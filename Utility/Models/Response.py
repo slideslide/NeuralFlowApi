@@ -2,13 +2,14 @@ from typing import Any
 
 from fastapi import FastAPI, Response
 import orjson
+
 from Utility.Models.HttpStatus import HttpStatus
 
 
 class ResponseModel(Response):
     media_type = "application/json"
 
-    def render(self, content: Any) -> bytes:
+    def render(self, content: Any):
         return orjson.dumps(
             {
                 "code": self.status_code,

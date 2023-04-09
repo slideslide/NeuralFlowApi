@@ -1,5 +1,6 @@
-import pymongo
+
 import CONFIG
-client = pymongo.MongoClient(CONFIG.mongodbURI)
-db = client["neuralflow"]
-UsersDB = db["users"]
+
+from motor.motor_asyncio import AsyncIOMotorClient
+client = AsyncIOMotorClient(CONFIG.MONGODB_URI)
+db = client.neuralflow
