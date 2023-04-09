@@ -1,12 +1,24 @@
-import json
-#import
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from requests import get
-app = FastAPI()
+from Http.Routes import router
+from Utility.Models.Response import ResponseModel
+import pymongo
+import CONFIG
+app = FastAPI(title="NeuralFlow API",
+              version="0.0.1",
+              terms_of_service="https://www.neuralflow.com",
+              contact={
+                  "name": "Jonyan Dunh",
+                  "email": "jonyandunh@outlook.com",
+              },
+              license_info={
+                  "name": "Apache 2.0",
+                  "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+              },
+              default_response_class=ResponseModel
+              )
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
+    "*",
 ]
 
 app.add_middleware(
@@ -17,6 +29,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def root():
-    return json.loads(get("https://dxs.moe.gov.cn/zx/json/xl/xlwk/").content.decode('utf-8', 'ignore'))[0]
+app.include_router(router,prefix='/api/v1')
+
