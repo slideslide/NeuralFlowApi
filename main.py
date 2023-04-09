@@ -45,10 +45,11 @@ app.add_middleware(
 async def global_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content=jsonable_encoder({"code": status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                  "message": HttpStatus.get_message(status.HTTP_500_INTERNAL_SERVER_ERROR),
-                                  "data": "An unexpected error occurred: {}".format(exc)
-                                  }),
+        content=jsonable_encoder({
+            "code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+            "message": HttpStatus.get_message(status.HTTP_500_INTERNAL_SERVER_ERROR),
+            "data": "An unexpected error occurred: {}".format(exc)
+        }),
     )
 
 
@@ -56,10 +57,11 @@ async def global_exception_handler(request: Request, exc: Exception):
 async def http_exception_handler(request, exc):
     return JSONResponse(
         status_code=exc.status_code,
-        content=jsonable_encoder({"code": exc.status_code,
-                                  "message": HttpStatus.get_message(exc.status_code),
-                                  "data": exc.detail
-                                  }),
+        content=jsonable_encoder({
+            "code": exc.status_code,
+            "message": HttpStatus.get_message(exc.status_code),
+            "data": exc.detail
+        }),
     )
 
 
@@ -67,9 +69,11 @@ async def http_exception_handler(request, exc):
 async def validation_exception_handler(request, exc):
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-        content=jsonable_encoder({"code": status.HTTP_422_UNPROCESSABLE_ENTITY,
-                                  "message": HttpStatus.get_message(status.HTTP_422_UNPROCESSABLE_ENTITY),
-                                  "data": {"body": exc.body, "detail": exc.errors()}}),
+        content=jsonable_encoder({
+            "code": status.HTTP_422_UNPROCESSABLE_ENTITY,
+            "message": HttpStatus.get_message(status.HTTP_422_UNPROCESSABLE_ENTITY),
+            "data": {"body": exc.body, "detail": exc.errors()}
+        }),
     )
 
 
