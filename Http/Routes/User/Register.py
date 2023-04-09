@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 
 from Utility.MongoDB import UsersDB
 from Utility.Models.User import UserModel
